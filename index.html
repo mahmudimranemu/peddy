@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Peddy - Pet Adoption Platform</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandColor: "#0E7A81",
+            },
+            fontFamily: {
+              lato: ["Lato", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="./js/config.js"></script>
+    <script src="./js/data.js"></script>
+  </head>
+  <body class="font-lato">
+    <header
+      id="header"
+      class="container mx-auto flex flex-col lg:flex-row gap-4 justify-between items-center py-4">
+      <div
+        id="logo"
+        class="flex gap-3 items-center"></div>
+      <nav
+        id="primary-menu"
+        class="flex gap-8"></nav>
+      <img
+        src="./img/user.svg"
+        alt="" />
+    </header>
+    <main class="container mx-auto flex flex-col items-center py-14">
+      <div class="flex flex-col gap-8 max-w-screen-md justify-center">
+        <div class="flex flex-col gap-6">
+          <p class="text-center text-2xl font-bold">
+            Bringing Families Together ❤️‍🔥
+          </p>
+          <h1 class="text-center lg:text-7xl text-6xl font-black">
+            Your Path to Adoption <br />
+            Starts Here
+          </h1>
+          <p class="text-center px-5">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+        </div>
+
+        <button
+          class="btn bg-brandColor text-white border-0 font-bold text-xl px-8 self-center rounded-xl">
+          View more
+        </button>
+      </div>
+      <img
+        src="./img/pet.webp"
+        alt="" />
+
+      <div class="flex flex-col gap-8 max-w-screen-md">
+        <h2 class="font-black text-5xl text-center">Adopt Your Best Friend</h2>
+        <p class="text-center text-zinc-500 px-5">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a.
+        </p>
+      </div>
+      <!-- Data from API -->
+      <div
+        id="pet-data"
+        class="py-12 flex flex-col gap-12">
+        <div
+          id="categories"
+          class="flex lg:flex-row flex-col gap-6 w-full items-center justify-between"></div>
+
+        <div
+          class="flex flex-col lg:flex-row gap-4 justify-between items-center w-full">
+          <p class="font-black text-2xl">Best Deal For you</p>
+          <button
+            class="bg-brandColor text-white border-0 font-bold text-xl px-8 py-4 rounded-xl">
+            Sort by Price
+          </button>
+        </div>
+        <div class="flex lg:flex-row flex-col gap-6">
+          <div
+            id="pet-list"
+            class="grid lg:grid-cols-3 grid-cols-1 gap-6"></div>
+          <div
+            id="liked-pets"
+            class="w-[312px] grid grid-cols-2 auto-rows-min gap-2"></div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-zinc-900 text-white py-12">
+      <div
+        class="container mx-auto flex flex-col lg:flex-row gap-8 items-center justify-between">
+        <div
+          id="col-1"
+          class="flex flex-col lg:items-start items-center gap-6"></div>
+        <div
+          id="col-2"
+          class="flex flex-col lg:items-start items-center gap-8"></div>
+        <div
+          id="col-3"
+          class="flex flex-col gap-8 lg:items-start items-center">
+          <h3 class="font-black text-white text-lg">Newsletter</h3>
+          <form class="flex flex-col gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="input input-bordered w-full max-w-xs" />
+            <button
+              class="btn bg-brandColor text-white border-0 font-bold text-xl">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </footer>
+    <!-- Open the modal using ID.showModal() method -->
+    <button
+      class="btn"
+      onclick="my_modal_adopt.showModal()">
+      open modal
+    </button>
+    <dialog
+      id="my_modal_adopt"
+      class="modal"></dialog>
+
+    <dialog
+      id="my_modal_details"
+      class="modal"></dialog>
+  </body>
+</html>
